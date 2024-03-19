@@ -83,6 +83,7 @@ abstract class Stmt {
         final Token name;
         final Expr initializer;
     }
+
     static class Return extends Stmt {
         Return(Token keyword, Expr value) {
             this.keyword = keyword;
@@ -97,6 +98,7 @@ abstract class Stmt {
         final Token keyword;
         final Expr value;
     }
+
     static class Print extends Stmt {
         Print(Expr expression) {
             this.expression = expression;

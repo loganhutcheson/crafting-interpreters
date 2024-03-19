@@ -23,7 +23,7 @@ class Interpreter implements Expr.Visitor<Object>,
         public String toString() { return "<native fn>"; }
       });
     }
-
+                               
     void interpret(List<Stmt> statements) {
         try {
             for (Stmt statement : statements) {
@@ -239,6 +239,7 @@ class Interpreter implements Expr.Visitor<Object>,
         return null;
     }
 
+
     @Override
     public Void visitReturnStmt(Stmt.Return stmt) {
         Object value = null;
@@ -246,6 +247,7 @@ class Interpreter implements Expr.Visitor<Object>,
 
         throw new Return(value);
     }
+
     
     @Override
     public Void visitVarStmt(Stmt.Var stmt) {

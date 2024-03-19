@@ -46,7 +46,7 @@ public class Parser {
         if (match(PRINT)) return printStatement();
         if (match(RETURN)) return returnStatement();
         if (match(WHILE)) return whileStatement();
-        if (match(RIGHT_BRACE)) return new Stmt.Block(block());
+        if (match(LEFT_BRACE)) return new Stmt.Block(block());
         return expressionStatement();
     }
 
@@ -167,6 +167,7 @@ public class Parser {
         List<Stmt> body = block();
         return new Stmt.Function(name, parameters, body);
     }
+
 
     private List<Stmt> block() {
         List<Stmt> statements = new ArrayList<>();
